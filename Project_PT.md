@@ -1,7 +1,7 @@
 #PROPOSTA TÉCNICA: PROJECTO RCPC 
 
-Título: Rede Comunitária de Processamento e Conhecimento (Distributed Knowledge Sharing)
-Visão: Democratização da infraestrutura de IA através da computação voluntária e mérito intelectual. 
+ - Título: Rede Comunitária de Processamento e Conhecimento (Distributed Knowledge Sharing)
+ - Visão: Democratização da infraestrutura de IA através da computação voluntária e mérito intelectual. 
 
 1. Fundamentação Conceptual 
 Inspirado em modelos de sucesso como o Folding@home, o Projecto RCPC propõe que o poder de processamento e a inteligência lógica não fiquem restritos a grandes centros de dados. A rede utiliza recursos ociosos de dispositivos domésticos para criar uma biblioteca viva de conhecimento e execução. 
