@@ -1,7 +1,7 @@
 #TECHNICAL PROPOSAL: RCPC PROJECT (Original name [PT]: Rede Comunitária de Processamento e Conhecimento)
 
-Title: Community-Based Knowledge Processing Network
-Vision: Democratization of AI infrastructure through volunteer computing and intellectual merit.
+ - Title: Community-Based Knowledge Processing Network
+ - Vision: Democratization of AI infrastructure through volunteer computing and intellectual merit.
 
 1. Conceptual Foundation
 Inspired by successful models such as Folding@home, the RCPC Project proposes that processing power and logical intelligence should not be restricted to large data centers. The network uses idle resources from home devices to create a living library of knowledge and execution.
