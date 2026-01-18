@@ -22,4 +22,4 @@ This project is presented in two languages to reach a global community of develo
 * **MasterDev:** Merit-based competitions for top-tier developers.
 
 ---
-*Created by a developer with a passion for logic since the Z80 era.*
+*Created by a developer with a passion for logic since the Turbo Pascal era.*
