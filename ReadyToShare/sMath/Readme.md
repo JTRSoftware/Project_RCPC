@@ -1,4 +1,4 @@
-# sMath Project - "Saiyan DNA" Math Engine 🧬🔥
+# sMath units - "Saiyan DNA" Math Engine 🧬🔥
 
 Estimular mentes através do código simples, estável e poderoso.
 
