@@ -1,41 +1,77 @@
-# AlfaCalc
+# AlfaCalc - Motor de Cálculo de Alta Precisão e Escala Infinita
 
-A **AlfaCalc** é uma calculadora de alta performance e precisão arbitrária, desenhada para engenheiros, programadores e entusiastas que necessitam de realizar cálculos complexos em múltiplas bases numéricas (Decimal, Hexadecimal e Alfadecimal/Base-36).
+A **AlfaCalc** é uma ferramenta de computação de nível profissional desenvolvida para operações aritméticas de alta performance com precisão numérica virtualmente ilimitada. Serve como uma ponte especializada entre três sistemas de numeração distintos, oferecendo sincronização em tempo real e uma interface robusta baseada no sistema "Infinity Display".
 
-Desenvolvida pela **JTR Software**, a AlfaCalc segue a filosofia: *"É simples parecer complicado, o complicado é parecer simples."*
-
-## 🚀 Funcionalidades Principais
-
-- **Display Multi-Base Sincronizado**: Visualize os seus cálculos simultaneamente em Decimal, Hexadecimal e Alfadecimal (Base-36).
-- **Sistema Infinity Display**: Interface robusta que suporta scroll e cópia de números de comprimento virtualmente ilimitado sem falhas visuais.
-- **Motor de Precisão Arbitrária**: Realize cálculos com números de magnitude extrema, limitados apenas pelo seu hardware.
-- **Suporte a Memória Swap**: Aritmética única baseada em disco para operações que excedem a memória RAM disponível.
-- **Benchmarking de Alta Precisão**: Medição do tempo de cálculo em tempo real (milissegundos/segundos) para cada operação.
-- **Modo Turbo (Conversão Automática)**: Otimize a performance ao lidar com milhões de dígitos, desativando a conversão de base em tempo real.
-- **Bloqueios de Segurança**: Gestão inteligente de estado que impede operações inválidas, como mudar de base a meio de um cálculo ou a inserção acidental de múltiplos separadores decimais.
-- **Suporte Total de Teclado**: Atalhos ativos para todas as operações, troca de base e introdução numérica.
-
-## 🛠 Stack Tecnológica
-
-- **Lazarus / FreePascal**: Núcleo em Object Pascal de alta eficiência.
-- **Unidades Matemáticas Customizadas**: 
-  - `sMath.pas`: Lógica decimal de precisão arbitrária.
-  - `sHexMath.pas`: Lógica em Base-16.
-  - `sAlfaMath.pas`: Lógica em Base-36.
-  - `sSwapMath.pas`: Gestão de overflow via disco (Swap).
-
-## 📦 Instalação
-
-Este projeto foi construído utilizando o **Lazarus**. 
-
-1. Clone o repositório.
-2. Abra o ficheiro `AlfaCalc.lpi` no IDE Lazarus.
-3. Compile e Corra (F9).
-
-## 📜 Licença
-
-Projeto desenvolvido para o repositório RCPC.
-Copyright (c) 2026 JTR Software.
+Desenvolvida pela **JTR Software**, a AlfaCalc materializa a nossa filosofia:  
+> *"É simples parecer complicado, o complicado é parecer simples."*
 
 ---
-*KISS - Keep It Simple and Stable.*
+
+## 🚀 Conjunto de Funcionalidades Avançadas
+
+### 1. Arquitetura "Infinity Display"
+As etiquetas GUI padrão falham ao tentar renderizar milhares de dígitos. A AlfaCalc resolve este problema utilizando um sistema de `TEdit` customizados (Decimal, Hex e Alfa) que oferece:
+- **Scroll Horizontal Fluido**: Navegue por milhões de dígitos usando as teclas de seta ou o arrasto do rato.
+- **Capacidade de Copiar/Colar**: Copie diretamente valores extremamente grandes para utilizar noutras ferramentas científicas ou de engenharia.
+- **Renderização Sem Glitches**: Eliminação de cortes visuais ou artefactos típicos das Labels padrão do Windows quando os números excedem a largura do ecrã.
+
+### 2. Motor Sincronizado Triple-Base
+Realize um cálculo numa base e veja a conversão nas outras duas instantaneamente:
+- **Decimal (Base-10)**: Aritmética padrão [0-9].
+- **Hexadecimal (Base-16)**: Suporte a [0-9][A-F] para aplicações em informática e sistemas embebidos.
+- **Alfadecimal (Base-36)**: Suporte total de [0-9][A-Z], permitindo uma representação numérica densa e compacta.
+
+### 3. Aritmética de Disco "Swap"
+Quando os números se tornam demasiado grandes para os buffers de memória padrão, a AlfaCalc pode utilizar o seu sistema único de **Memória Swap**:
+- Processa aritmética utilizando fluxos de ficheiros temporários (`TFileStream`).
+- Permite cálculos que normalmente causariam crash em calculadoras comuns devido ao transbordo de RAM.
+- *Nota: Suporta cálculos de multi-gigabytes neste modo.*
+
+### 4. Performance e o "Modo Turbo"
+A computação científica exige muitos recursos. A AlfaCalc inclui um seletor de performance (**Checkbox Conversão Automática**):
+- **Ativado**: Todas as três bases atualizam-se em tempo real enquanto digita (ideal para valores pequenos e médios).
+- **Desativado (Turbo)**: Apenas o visor ativo atualiza, mostrando `🚫` nos inativos para priorizar os ciclos de CPU para o cálculo principal. A conversão ocorre sob demanda ao mudar de base.
+
+---
+
+## ⌨️ Interface de Teclado (Atalhos)
+
+A AlfaCalc foi desenhada para "Power Users" e dactilógrafos:
+- **Introdução Numérica**: `0-9`, `A-F` (Hex), `G-Z` (Alfa).
+- **Separador Decimal**: Aceita tanto o ponto `.` como a vírgula `,`.
+- **Operadores Aritméticos**: `+`, `-`, `*`, `/`.
+- **Execução**: Teclada `Enter` ou `=`.
+- **Limpar Tudo (AC)**: Tecla `Escape`.
+- **Seleção de Base**: Clique nas Checkboxes para bloquear ou desbloquear gamas numéricas.
+
+---
+
+## 🛠 Arquitetura do Projeto (Unidades)
+
+O motor está modularizado em várias unidades Object Pascal de alta performance:
+- `sMath.pas`: Aritmética Decimal de precisão arbitrária baseada em strings.
+- `sHexMath.pas`: Lógica especializada para Base-16.
+- `sAlfaMath.pas`: Implementações completas para Base-36.
+- `sSwapMath / sHexSwapMath / sAlfaSwapMath`: Gestão de overflow via disco utilizando `TFileStream`.
+- `uMainAlfa.pas`: Lógica visual, capturas de teclado e gestão de estado sincronizado da UI.
+
+---
+
+## �️ Estabilidade e Segurança
+1. **Bloqueio de Escala**: Assim que um operador é selecionado, a base numérica é bloqueada para evitar erros lógicos durante a conta.
+2. **Proteção de Carateres Inválidos**: A interface desativa botões e ignora teclas que não pertencem à base ativa (ex: escrever 'Z' no modo Decimal).
+3. **Controlo de Separador Único**: Impede erros de sintaxe ao bloquear a inserção de múltiplos pontos decimais.
+
+---
+
+## 📦 Como Compilar
+
+1. Descarregue o **Lazarus IDE** (versão 3.0 ou superior).
+2. Garanta que tem a estrutura de pastas do projeto intacta.
+3. Abra o ficheiro `AlfaCalc.lpi`.
+4. Pressione `F9` (Compilar e Correr).
+
+---
+*KISS - Keep It Simple and Stable.*  
+Projeto mantido para o repositório **RCPC**.  
+Copyright © 2026 **JTR Software**.
