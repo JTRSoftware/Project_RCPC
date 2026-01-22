@@ -1,4 +1,4 @@
-# RCPC Project 🌐
+# RCPC \ CNPK Project 🌐
 ### Community Network for Processing and Knowledge
 *(Rede Comunitária de Processamento e Conhecimento)*
 
