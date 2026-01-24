@@ -35,7 +35,7 @@ O projeto culmina na identificação de talentos através da meritocracia técni
 
 O funcionamento conceptual do RCPC está representado no seguinte diagrama, que ilustra a partilha de recursos, integração com plataformas externas e o sistema de mérito lógico:
 
-![Diagrama RCPC](./diagrama_rcpc.png)
+![Diagrama RCPC](./RCPC_DFD.drawio.png)
 
 Este diagrama mostra:
 - A contribuição voluntária de CPU e conhecimento por parte dos utilizadores
